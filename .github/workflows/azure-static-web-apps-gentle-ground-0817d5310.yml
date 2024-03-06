@@ -17,15 +17,15 @@ jobs:
     steps:
      - name: Azure login
        uses: azure/login@v2
-        with:
-          submodules: true
-          lfs: false
-      - name: Build And Deploy
+       with:
         client-id: ${{ secrets.AZURE_CLIENT_ID }}
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         
-        id: builddeploy
+           submodules: true
+            lfs: false
+      - name: Build And Deploy
+       id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GENTLE_GROUND_0817D5310 }}
